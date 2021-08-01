@@ -1,0 +1,9 @@
+###### Requirements without Version Specifiers ######
+pandas
+altair
+plotly.express
+streamlit
+seaborn
+sklearn
+time
+#
