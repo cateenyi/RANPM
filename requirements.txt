@@ -5,4 +5,5 @@ plotly.express
 streamlit
 scikit-learn
 openpyxl
+xlrd
 #
