@@ -4,4 +4,5 @@ altair
 plotly.express
 streamlit
 sklearn
+openpyxl
 #
