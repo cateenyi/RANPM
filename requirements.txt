@@ -3,7 +3,6 @@ pandas
 altair
 plotly.express
 streamlit
-sklearn
-sklearn.linear_model
+scikit-learn
 openpyxl
 #
