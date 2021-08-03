@@ -8,12 +8,12 @@ import pandas as pd
 import altair as alt
 import plotly.express as px
 import streamlit as st
-import seaborn as sns
+#import seaborn as sns
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 from sklearn import linear_model
-from sklearn.metrics import accuracy_score
-import time
+#from sklearn.metrics import accuracy_score
+#import time
 
 st.set_page_config(layout='wide')
 st.cache()
