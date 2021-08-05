@@ -395,6 +395,41 @@ def main():
             df = get_df2(file)
             counter = st.sidebar.multiselect('Category', list(df.columns[1:]))
             
+            if len(counter)==1:
+                
+                base = alt.Chart(df).encode(
+                    alt.X('Year-Week:O', axis=alt.Axis(title='Year-Week'))
+                    ).properties(
+                        width=800,
+                        height=300)
+                        
+                chart = alt.layer(
+                    base.mark_area(color='#57A44C', opacity=0.3).encode(
+                        y=alt.Y(counter[0], axis=alt.Axis(title=f'#Cell {counter[0]}', titleColor='#57A44C'))),
+                    base.mark_area(color='#5276A7', opacity=0.5).encode(y=counter[0]),                   
+                    )
+                #y=alt.Y('y', axis=alt.Axis(format='$', title='dollar amount'))
+                    
+                st.write(chart)
+                
+            if len(counter)==2:
+                
+                base = alt.Chart(df).encode(
+                    alt.X('Year-Week:O', axis=alt.Axis(title='Year-Week'))
+                    ).properties(
+                        width=800,
+                        height=300)
+                        
+                chart = alt.layer(
+                    base.mark_area(color='#57A44C', opacity=0.3).encode(
+                        y=alt.Y(counter[0], axis=alt.Axis(title=f'#Cell {counter[0]}, {counter[1]}', titleColor='#57A44C'))),
+                    base.mark_area(color='#5276A7', opacity=0.5).encode(y=counter[0]),                   
+                    base.mark_area(color='red', opacity=0.8).encode(y=counter[1])
+                    )
+                #y=alt.Y('y', axis=alt.Axis(format='$', title='dollar amount'))
+                    
+                st.write(chart)
+            
             if len(counter)==3:
                 
                 base = alt.Chart(df).encode(
@@ -405,14 +440,13 @@ def main():
                         
                 chart = alt.layer(
                     base.mark_area(color='#57A44C', opacity=0.3).encode(
-                        y=alt.Y(counter[0], axis=alt.Axis(title='#Cells PRB>90%_80%_70%', titleColor='#57A44C'))),
+                        y=alt.Y(counter[0], axis=alt.Axis(title=f'#Cell {counter[0]}, {counter[1]}, {counter[2]}', titleColor='#57A44C'))),
                     base.mark_area(color='#5276A7', opacity=0.5).encode(y=counter[1]),                   
-                    base.mark_area(color='red', opacity=0.8).encode(y=counter[2])
+                    base.mark_area(color='red', opacity=0.4).encode(y=counter[2])
                     )
                 #y=alt.Y('y', axis=alt.Axis(format='$', title='dollar amount'))
                     
                 st.write(chart)
-                
             
     elif choice == 'About App':
         st.subheader('A web app for quick RAN performance analysis')
