@@ -86,7 +86,7 @@ def main():
                          * RNC_MP LOAD(%)
                          
                          """)
-            file = None    
+            file = False
             file = st.file_uploader('Upload MAPS Report', type=['csv', 'xls', 'xlsx'])
             if not file:
                 st.write("Upload a .csv, xls or .xlsx file to get started")
@@ -177,7 +177,7 @@ def main():
                          * RNC_MP LOAD(%)
                          
                          """)
-            file = None  
+            file = False 
             file = st.file_uploader('Upload MAPS Report', type=['csv', 'xls', 'xlsx'])
             if not file:
                 st.write("Upload a .csv, xls or .xlsx file to get started")
@@ -254,7 +254,7 @@ def main():
         
     elif choice == 'BSC Analysis':
         st.subheader('BSC Performance Analysis')
-        file = None  
+        file = False 
         file = st.file_uploader('Upload MAPS Report', type=['csv', 'xls', 'xlsx'])
         if not file:
             st.write("Upload a .csv, xls or .xlsx file to get started")
@@ -332,7 +332,7 @@ def main():
                 
         menu = ['PRB Analysis', 'KPI Trends']
         selection = st.sidebar.selectbox('Analysis', menu)
-        file = None  
+        file = False 
         file = st.file_uploader('Upload MAPS Report', type=['csv', 'xls', 'xlsx'])
         if not file:
             st.write("Upload a .csv, xls or .xlsx file to get started")
