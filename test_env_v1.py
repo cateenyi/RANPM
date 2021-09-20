@@ -72,7 +72,7 @@ def main():
         
         if selection == 'KPI Trends':
             st.subheader('RNC Performance Analysis')
-            expander1 = st.beta_expander('Expand to view required MAPS data')
+            expander1 = st.expander('Expand to view required MAPS data')
             with expander1:
                 st.write("""
                          Upload Busy Hour MAPS data with columns for
@@ -103,7 +103,7 @@ def main():
             
 #---------------------------------#
 ## Network Level Trends
-            expander = st.beta_expander("View Network Level Trends")
+            expander = st.expander("View Network Level Trends")
             with expander:
             
                 st.subheader("Trend Analysis")
@@ -130,7 +130,7 @@ def main():
 
 ## Find max values per column in last 30 days
 
-                expander = st.beta_expander("View Max Values per RNC (30 days)")
+                expander = st.expander("View Max Values per RNC (30 days)")
                 with expander:
                         st.success('RNC Peak Values')
                     
@@ -163,7 +163,7 @@ def main():
             st.success('DC Load prediction based on hour of day and number of FACH users')
             st.write('The prediction is based on a Linear Model that takes time and users as the key features influencing DC load')
             
-            expander = st.beta_expander('Expand to view required MAPS data')
+            expander = st.expander('Expand to view required MAPS data')
             with expander:
                 st.write("""
                          Upload hourly MAPS data with columns for
